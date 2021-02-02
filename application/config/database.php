@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'www.it354.com',
+	'hostname' => '68.66.200.208',
 	'username' => 'it354_students',
 	'password' => 'steinway',
 	'database' => 'it354_assign4',
