@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = '/assignment3/';
+$config['base_url'] = '/mvc-php-crud/';
 
 /*
 |--------------------------------------------------------------------------
