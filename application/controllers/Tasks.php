@@ -17,7 +17,7 @@ class Tasks extends CI_Controller
     
     
     // your new methods go here
-    public function create()
+    public function create($project_id)
     {
         $this->form_validation->set_rules('task_name', 'task Name', 'trim|required');
         $this->form_validation->set_rules('task_body', 'task Description', 'trim|required');
@@ -27,7 +27,7 @@ class Tasks extends CI_Controller
             $this->load->view('layouts/main', $data);
         } else {
             $data = array(
-                'project_id' => $this->uri->segment(3),
+                'project_id' => $project_id,
                 'task_name' => $this->input->post('task_name'),
                 'task_body' => $this->input->post('task_body'),
                 'due_date' => $this->input->post('due_date')
@@ -36,7 +36,7 @@ class Tasks extends CI_Controller
             if ($this->task_model->create_task($data)) {
                 $this->session->set_flashdata('task_created', 'Your Task has been created');
 
-                redirect("projects/display/". $this->uri->segment(3));
+                redirect("projects/display/". $project_id);
             }
         }
     }
